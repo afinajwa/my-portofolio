@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Cute To‑Do</title>
+  <link rel="stylesheet" href="list.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="logo">My Cute To‑Do</div>
+    <div class="menu-toggle" id="menu-toggle">☰</div>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#">Daily</a></li>
+      <li><a href="#boots">Boots</a></li>
+    </ul>
+  </header>
+
+  <main class="main-content">
+    <section class="intro">
+      <h2>To-Do List</h2>
+      <p class="date">Today: <span id="current-date"></span></p>
+    </section>
+
+    <section class="priorities">
+      <h3>Top 3 Priorities</h3>
+      <ul>
+        <li><input type="text" placeholder="Priority 1"></li>
+        <li><input type="text" placeholder="Priority 2"></li>
+        <li><input type="text" placeholder="Priority 3"></li>
+      </ul>
+    </section>
+
+    <section class="todo-list">
+      <h3>Your To-Do List</h3>
+      <ul id="task-list">
+        <li><input type="text" placeholder="Drink 8 glasses of water"><input type="checkbox"></li>
+        <li><input type="text" placeholder="Morning yoga"><input type="checkbox"></li>
+        <li><input type="text" placeholder="Read something inspiring"><input type="checkbox"></li>
+        <li><input type="text" placeholder="Write a short journal"><input type="checkbox"></li>
+        <li><input type="text" placeholder="Sppiritual time"><input type="checkbox"></li>
+        <li><input type="text" placeholder="Sleep before 11 PM"><input type="checkbox"></li>
+      </ul>
+    </section>
+
+    <section class="mood-tracker">
+      <h3>Mood Tracker</h3>
+      <div class="moods">
+        <label><input type="radio" name="mood" value="😊 Happy"> 😊 Happy</label>
+        <label><input type="radio" name="mood" value="😁 Very Happy"> 😁 Very Happy</label>
+        <label><input type="radio" name="mood" value="😐 Not Happy"> 😐 Not Happy</label>
+      </div>
+      <div id="mood-message" class="mood-message"></div>
+    </section>
+
+    <section class="notes">
+      <h3>Notes</h3>
+      <textarea placeholder="Write something..."></textarea>
+    </section>
+
+    <section class="save-section">
+      <button id="saveBtn">Save</button>
+    </section>
+
+    <section id="boots" class="boots-section">
+      <h2>🌸 Quote of the Day</h2>
+      <p id="quoteText">"You are stronger than you think.."</p>
+      <p id="quoteAuthor">— Oscar Wilde</p>
+      <button id="newQuoteBtn">Show Another Quote</button>
+    </section>
+  </main>
+
+  <script src="list.js"></script>
+</body>
+</html>

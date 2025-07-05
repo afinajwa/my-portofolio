@@ -1,0 +1,200 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #fff0f6;
+  color: #333;
+  padding: 10px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffcce5;
+  padding: 15px 20px;
+  border-radius: 12px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-weight: bold;
+  color: #ff69b4;
+  font-size: 1.5rem;
+}
+
+.menu-toggle {
+  font-size: 24px;
+  cursor: pointer;
+  display: none;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #d63384;
+  font-weight: bold;
+}
+
+.main-content {
+  padding: 20px;
+  line-height: 1.7;
+}
+
+.intro h2 {
+  text-align: center;
+  font-size: 28px;
+  color: #ff69b4;
+}
+
+.intro p {
+  text-align: center;
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.priorities, .todo-list, .mood-tracker, .notes, .boots-section {
+  background-color: #ffffff;
+  padding: 15px;
+  margin: 15px 0;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.priorities ul,
+.todo-list ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.priorities ul li,
+.todo-list ul li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ffd6e7;
+  width: 80%;
+  max-width: 400px;
+  margin-right: 10px;
+}
+
+input[type="checkbox"] {
+  transform: scale(1.2);
+}
+
+.moods label {
+  display: inline-block;
+  padding: 10px;
+  border: 2px solid #ffcce0;
+  border-radius: 8px;
+  margin: 5px;
+  background-color: #fff6fa;
+  cursor: pointer;
+}
+
+.mood-message {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #ff69b4;
+}
+
+textarea {
+  width: 100%;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 8px;
+  min-height: 100px;
+}
+
+.save-section {
+  text-align: center;
+  margin-top: 20px;
+}
+
+#saveBtn {
+  background-color: #ff99cc;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#newQuoteBtn {
+  background-color: #ffcce7;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: background-color 0.3s ease;
+}
+
+#newQuoteBtn:hover {
+  background-color: #ffb6d9;
+  color: #fff;
+}
+
+.save-notif {
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ff99cc;
+  color: rgb(245, 248, 250);
+  padding: 15px 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  font-size: 16px;
+  animation: fadein 0.5s ease;
+}
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: #ffcce5;
+    position: absolute;
+    right: 20px;
+    top: 60px;
+    border-radius: 10px;
+    padding: 10px;
+    z-index: 999;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+}
