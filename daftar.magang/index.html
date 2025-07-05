@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard Magang Merdeka</title>
+  <link rel="stylesheet" href="daftar.css" />
+</head>
+<body>
+  <!-- Navbar -->
+  <header class="header">
+    <h1>Dashboard Magang Merdeka</h1>
+    <nav class="navbar">
+      <ul>
+        <li><a href="#beranda">Beranda</a></li>
+        <li><a href="#form-daftar">Daftar</a></li>
+        <li><a href="#persyaratan">Persyaratan</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- BERANDA -->
+  <section id="beranda" class="container-logo">
+    <img src="wa3.png" alt="Ilustrasi Magang Merdeka" class="illustration" />
+    <p class="description">
+      Magang merupakan kesempatan bagi mahasiswa atau lulusan baru untuk memperoleh pengalaman kerja langsung di dunia profesional. Melalui program magang, peserta dapat mengaplikasikan pengetahuan akademis dalam tugas-tugas nyata, mengembangkan keterampilan teknis dan non-teknis, serta memperluas jejaring profesional.
+    </p>
+  </section>
+
+  <!-- FORM PENDAFTARAN -->
+  <section id="form-daftar" class="container daftar">
+    <h2>Form Pendaftaran Mahasiswa</h2>
+    <div id="notif-success" class="flash-success" style="display: none;">Data berhasil disimpan!</div>
+
+    <form>
+      <table>
+        <tr><td>Nama</td><td><input type="text" name="nama" required></td></tr>
+        <tr><td>NPM</td><td><input type="text" name="npm" required></td></tr>
+        <tr>
+          <td>Jenis Kelamin</td>
+          <td>
+            <select name="jenis_kelamin" required>
+              <option value="Laki-laki">Laki-laki</option>
+              <option value="Perempuan">Perempuan</option>
+            </select>
+          </td>
+        </tr>
+        <tr><td>Email</td><td><input type="email" name="email" required></td></tr>
+        <tr><td>Alamat</td><td><input type="text" name="alamat" required></td></tr>
+        <tr><td>Pengalaman</td><td><input type="text" name="pengalaman"></td></tr>
+        <tr><td>Tanggal Mendaftar</td><td><input type="date" name="tanggal_mendaftar" required></td></tr>
+        <tr>
+          <td></td>
+          <td>
+            <button type="submit">SIMPAN</button>
+            <button type="button" onclick="konfirmasiBatal()">BATAL</button>
+          </td>
+        </tr>
+      </table>
+    </form>
+  </section>
+
+  <!-- PERSYARATAN -->
+  <section id="persyaratan" class="container persyaratan">
+    <h2>Persyaratan Magang</h2>
+    <ul>
+      <li>Mahasiswa aktif minimal semester 4</li>
+      <li>IPK minimal 2.75</li>
+      <li>Surat rekomendasi dari kampus</li>
+      <li>CV dan Portofolio</li>
+      <li>Bersedia mengikuti magang minimal 3 bulan</li>
+    </ul>
+  </section>
+
+  <!-- Script -->
+  <script>
+    document.querySelector("form").addEventListener("submit", function(e) {
+      e.preventDefault();
+      document.getElementById("notif-success").style.display = "block";
+      window.scrollTo({ top: 0, behavior: "smooth" });
+
+      setTimeout(() => {
+        document.querySelector("form").reset();
+      }, 1500);
+    });
+
+    function konfirmasiBatal() {
+      if (confirm("Yakin ingin membatalkan?")) {
+        document.querySelector("form").reset();
+      }
+    }
+  </script>
+</body>
+</html>
